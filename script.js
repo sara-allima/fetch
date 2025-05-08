@@ -22,6 +22,11 @@ function createUser(user) {
     const card = document.createElement('div')
     card.className = 'card'
 
+    const linkPerfil = document.createElement('a')
+    linkPerfil.classList.add('linkPerfil')
+    linkPerfil.href = user.html_url
+    linkPerfil.innerText = 'Visite'
+
     const userAvatar = document.createElement('img')
     userAvatar.src = user.avatar_url //Adiciona a foto de perfil do usuário
     userAvatar.alt = `Imagem de perfil de ${user.login}`
@@ -30,11 +35,12 @@ function createUser(user) {
     name.innerText = `${user.name}`
 
     const userName = document.createElement('p')
-    userName.innerText = `@git add${user.login}`
+    userName.innerText = `@${user.login}`
     
     card.append(userAvatar)
     card.append(name)
     card.append(userName)
+    card.append(linkPerfil)
     app.append(card)
 }
 fetchGithub('sara-allima') 
