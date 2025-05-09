@@ -14,7 +14,17 @@ html, body {
     background: #2b3137;
     width: 800px;
 }
+.card {
+    display: flex;
+    border: 1px solid green;
+}
 .linkPerfil {
     border: 1px solid black;
     padding: 5px;
+}
+.fotoPerfil {
+    border-radius: 50%;
+    max-width: 36%;
+    border: 1px solid #24292e;
+    margin: 30px;
 }

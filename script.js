@@ -21,26 +21,30 @@ function createUser(user) {
     const app = document.getElementById('app')
     const card = document.createElement('div')
     card.className = 'card'
+    const infosDiv = document.createElement('div')
 
     const linkPerfil = document.createElement('a')
     linkPerfil.classList.add('linkPerfil')
     linkPerfil.href = user.html_url
     linkPerfil.innerText = 'Visite'
+    linkPerfil.target = '_blank'
 
     const userAvatar = document.createElement('img')
     userAvatar.src = user.avatar_url //Adiciona a foto de perfil do usuário
     userAvatar.alt = `Imagem de perfil de ${user.login}`
+    userAvatar.classList.add('fotoPerfil')
 
     const name = document.createElement('h2')
     name.innerText = `${user.name}`
 
     const userName = document.createElement('p')
     userName.innerText = `@${user.login}`
-    
+
+    infosDiv.append(name)
+    infosDiv.append(userName)
+    infosDiv.append(linkPerfil)
     card.append(userAvatar)
-    card.append(name)
-    card.append(userName)
-    card.append(linkPerfil)
+    card.append(infosDiv)
     app.append(card)
 }
 fetchGithub('sara-allima') 
