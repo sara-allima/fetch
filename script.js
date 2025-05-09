@@ -22,6 +22,7 @@ function createUser(user) {
     const card = document.createElement('div')
     card.className = 'card'
     const infosDiv = document.createElement('div')
+    infosDiv.className = 'infos'
 
     const linkPerfil = document.createElement('a')
     linkPerfil.classList.add('linkPerfil')
@@ -47,4 +48,4 @@ function createUser(user) {
     card.append(infosDiv)
     app.append(card)
 }
-fetchGithub('sara-allima') 
+fetchGithub('matheusbattisti') 
