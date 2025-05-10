@@ -1,5 +1,6 @@
-function fetchGithub(username) {
-    fetch(`https://api.github.com/users/${username}`)
+function fetchGithub() {
+    const searchUser = document.getElementById('searchUser').value
+    fetch(`https://api.github.com/users/${searchUser}`)
         .then((response) => {
             if(!response.ok) {
                 console.log('Usuário não encontrado')
@@ -16,9 +17,10 @@ function fetchGithub(username) {
             const app = document.getElementById('app')
             app.innerHTML = `<p>${error.message}</p> ` 
         })
-    }
+}
 function createUser(user) {
     const app = document.getElementById('app')
+    app.innerHTML = ''
     const card = document.createElement('div')
     card.className = 'card'
     const infosDiv = document.createElement('div')
@@ -47,5 +49,4 @@ function createUser(user) {
     card.append(userAvatar)
     card.append(infosDiv)
     app.append(card)
-}
-fetchGithub('matheusbattisti') 
+} 

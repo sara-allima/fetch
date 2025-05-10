@@ -7,9 +7,9 @@
     <title>Card do GitHub</title>
 </head>
 <body>
-    <form action="">
-        <input type="text" placeholder="Usuário">
-        <button>Buscar</button>
+    <form action="" onsubmit="event.preventDefault(); fetchGithub()">
+        <input type="text" placeholder="Usuário" id="searchUser">
+        <button id="btn"">Buscar</button>
     </form>
     <div id="app">
     </div>
